@@ -1,0 +1,63 @@
+{
+  "raw_rows_df1": 374,
+  "raw_rows_df2": 2020,
+  "shared_columns": [
+    "age",
+    "bmi_category",
+    "daily_steps",
+    "gender",
+    "heart_rate",
+    "physical_activity_level",
+    "quality_of_sleep",
+    "sleep_duration",
+    "stress_level"
+  ],
+  "dup_removed_df1": 242,
+  "dup_removed_df2": 20,
+  "rows_after_merge": 2132,
+  "dup_removed_after_merge": 26,
+  "rows_after_dedup": 2106,
+  "missing_before_imputation": {
+    "stress_level": 63
+  },
+  "invalid_rows_removed": {
+    "age < 18": 5,
+    "heart_rate > 120 bpm": 5,
+    "sleep_duration > 12 h": 5
+  },
+  "invalid_rows_removed_total": 15,
+  "rows_final": 2091,
+  "class_counts": {
+    "low": 451,
+    "medium": 1078,
+    "high": 562
+  },
+  "class_share": {
+    "low": 0.216,
+    "medium": 0.516,
+    "high": 0.269
+  },
+  "n_train": 1672,
+  "n_test": 419,
+  "processed_feature_names": [
+    "age",
+    "daily_steps",
+    "heart_rate",
+    "physical_activity_level",
+    "sleep_duration",
+    "stress_level",
+    "gender_male",
+    "bmi_category_normal",
+    "bmi_category_obese",
+    "bmi_category_overweight",
+    "bmi_category_underweight"
+  ],
+  "train_medians": {
+    "age": 45.0,
+    "daily_steps": 6826.5,
+    "heart_rate": 72.0,
+    "physical_activity_level": 60.95,
+    "sleep_duration": 6.8,
+    "stress_level": 4.9
+  }
+}
