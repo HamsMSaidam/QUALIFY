@@ -1,7 +1,0 @@
-model,cv_r2,cv_r2_std,cv_mae,cv_rmse,test_r2,test_mae,test_rmse,cv_accuracy,cv_accuracy_std,cv_f1_macro,test_accuracy,test_f1_macro
-Mean predictor (reference),-0.007,0.009,1.128,1.401,-0.0,1.103,1.348,,,,,
-Linear Regression,0.468,0.012,0.821,1.018,0.545,0.71,0.909,,,,,
-Ridge (alpha=10),0.468,0.012,0.821,1.018,0.545,0.711,0.91,,,,,
-Majority class (reference),,,,,,,,0.516,0.001,0.227,0.516,0.227
-Logistic Regression (default),,,,,,,,0.613,0.025,0.57,0.666,0.625
-"Logistic Regression (tuned: C=1, class_weight=None)",,,,,,,,0.613,0.025,0.57,0.666,0.625
