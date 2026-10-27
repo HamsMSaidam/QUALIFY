@@ -1,2 +1,2 @@
 model,cv_f1_macro,test_accuracy,test_f1_macro
-Random Forest Classifier (tuned),0.59,0.609,0.609
+Random Forest Classifier (tuned),0.928,0.963,0.877

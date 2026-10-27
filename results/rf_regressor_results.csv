@@ -1,2 +1,2 @@
 model,cv_r2,cv_r2_std,train_r2,test_r2,test_mae,test_rmse
-Random Forest Regressor (tuned),0.469,0.049,0.582,0.533,0.725,0.922
+"Random Forest Regressor (tuned, engineered)",0.931,0.057,0.992,0.882,0.207,0.455
