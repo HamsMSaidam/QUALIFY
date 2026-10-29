@@ -8,6 +8,7 @@ Overview
 Qualify is a machine-learning project that explores how lifestyle and health-related factors are associated with sleep quality. It develops models for two related tasks:
 1. Regression: predict a numerical quality_of_sleep score.
 2. Classification: categorize sleep quality as low, medium, or high.
+3. 
 The project applies data cleaning, exploratory data analysis (EDA), preprocessing pipelines, feature engineering, model training, cross-validation, hyperparameter tuning, and held-out test evaluation. It also considers the responsible use and limitations of predictions about personal well-being.
 Project objectives
 - Clean and prepare sleep-health data for analysis.
@@ -128,6 +129,4 @@ AI tools used: [Name the tools, if any.]
 How they were used: [Describe whether AI assisted with brainstorming, explanations, code, debugging, writing, or editing.]
 Human verification: [Explain how the team reviewed, tested, and verified any AI-assisted material.]
 
-Do not leave this placeholder unchanged in the final submission. Report AI use honestly and follow the instructor's requirements.
-License and data attribution
-Add the project's chosen software license and the dataset's original source/license here before public redistribution. Do not assume that the dataset is freely redistributable merely because it is publicly accessible.
+
