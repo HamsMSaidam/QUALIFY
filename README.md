@@ -1,16 +1,31 @@
 # QUALIFY
-### Qualify: Sleep Quality Prediction
+### Qualify: Sleep Quality Prediction using Supervised Machine Learning
+
 Course: CS316 – Introduction to AI and Data Science
 Instructor: Dr. Heyfa Ammar
 Term: 261
-Project topic: Predicting sleep quality using machine learning
-Overview
+
+A machine learning project focused on predicting sleep quality based on lifestyle and health-related features.
+
+## Overview
+
 Qualify is a machine-learning project that explores how lifestyle and health-related factors are associated with sleep quality. It develops models for two related tasks:
 1. Regression: predict a numerical quality_of_sleep score.
-2. Classification: Based on scale of numerical sleep score, categorize sleep quality as low, medium, or high.
+2. Classification: categorize sleep quality as low, medium, or high, according to numerical sleep score ranges
+3. 
 
-The project applies data cleaning, exploratory data analysis (EDA), preprocessing pipelines, feature engineering, model training, cross-validation, hyperparameter tuning, and held-out test evaluation. It also considers the responsible use and limitations of predictions about personal well-being.
-Project objectives
+The project workflow involves:
+- Data cleaning
+- Exploratory Data Analysis (EDA)
+- Preprocessing pipelines
+- Feature engineering
+- Model training and cross-validation
+- Hyperparameter tuning
+- Held-out test evaluation
+- Considering the responsible use and limitations of predictions about personal well-being.
+
+## Project objectives
+
 - Clean and prepare sleep-health data for analysis.
 - Explore relationships between sleep quality and lifestyle features using summary statistics and visualizations.
 - Build reproducible preprocessing pipelines for numerical and categorical variables.
@@ -18,32 +33,40 @@ Project objectives
 - Train and evaluate regression and classification models using appropriate metrics.
 - Select models based on validation and test performance, while checking for overfitting.
 - Discuss the practical value and limitations of using lifestyle data to estimate sleep quality.
-Dataset
+  
+## Dataset
 The notebook reads the following CSV file from the project’s raw-data folder:
+```text
 data/
 └── raw/
     └── Sleep_health_and_lifestyle_dataset.csv
+```
+
 Place the dataset at that exact path before running the notebook. If the dataset is not included in this GitHub repository, obtain it from the source used by your team and make sure you have permission to redistribute it.
 
 The notebook standardizes column names and categorical text, normalizes BMI category labels, removes the person identifier and duplicate rows, drops records without a target value, and filters records that fail the notebook's validity rules. The rules remove records with age below 18, heart rate above 120, or sleep duration above 12 hours.
 
 The main target is quality_of_sleep. The classification target, sleep_quality_class, is derived from that score using these categories:
-Class	Rule
-Low	Score below 6
-Medium	Score from 6 up to (but not including) 8
-High	Score of 8 or above
+
+# Class	 Rule
+Low	     Score below 6
+Medium	 Score from 6 up to (but not including) 8
+High	 Score of 8 or above
 
 
-Input features
+## Input features
+
 The notebook uses eight original input features:
 - Numerical: age, daily_steps, heart_rate, physical_activity_level, sleep_duration, stress_level
 - Categorical: gender, bmi_category
+
 The notebook also experiments with four engineered features:
 - Stress–sleep interaction
 - Stress–heart-rate interaction
 - Steps per activity level
 - Absolute deviation of sleep duration from 8 hours
-Methods
+
+## Methods
 Data analysis and preprocessing
 The notebook includes:
 - Dataset inspection and summary statistics
