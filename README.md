@@ -12,7 +12,6 @@ A machine learning project focused on predicting sleep quality based on lifestyl
 Qualify is a machine-learning project that explores how lifestyle and health-related factors are associated with sleep quality. It develops models for two related tasks:
 1. Regression: predict a numerical quality_of_sleep score.
 2. Classification: categorize sleep quality as low, medium, or high, according to numerical sleep score ranges
-3. 
 
 The project workflow involves:
 - Data cleaning
@@ -42,9 +41,9 @@ data/
     └── Sleep_health_and_lifestyle_dataset.csv
 ```
 
-Place the dataset at that exact path before running the notebook. If the dataset is not included in this GitHub repository, obtain it from the source used by your team and make sure you have permission to redistribute it.
+Place the dataset at that exact path before running the notebook. If the dataset is not included in this GitHub repository, obtain it from the source used by your team and make sure you have permission to use it.
 
-The notebook standardizes column names and categorical text, normalizes BMI category labels, removes the person identifier and duplicate rows, drops records without a target value, and filters records that fail the notebook's validity rules. The rules remove records with age below 18, heart rate above 120, or sleep duration above 12 hours.
+The notebook standardizes column names and categorical text, normalizes BMI category labels, removes the person identifier and duplicate rows, drops records without a target value, and filters records to the sleep-quality prediction task.
 
 The main target is quality_of_sleep. The classification target, sleep_quality_class, is derived from that score using these categories:
 
@@ -97,7 +96,7 @@ The notebook compares baseline and machine-learning models for both tasks.
 - Tuned Logistic Regression
 - Random Forest Classifier with hyperparameter tuning
 
-Cross-validation is used during model comparison and tuning. The notebook evaluates regression using metrics such as R², MAE, and RMSE, and classification using accuracy, macro F1, and a confusion matrix. Random Forest models are also examined for possible overfitting and feature importance.
+Cross-validation is used during model comparison and tuning. The notebook evaluates regression using metrics such as R², MAE, and RMSE, and classification using accuracy, macro F1, and a confusion matrix.
 
 ---
 
@@ -106,7 +105,7 @@ Cross-validation is used during model comparison and tuning. The notebook evalua
 According to the final model-selection discussion in the notebook:
 
 - Regression: Linear Regression was selected to predict the numerical sleep-quality score. The notebook reports a held-out test R² of 0.951 and RMSE of 0.293 for this model.
-- Classification: The tuned Random Forest Classifier was selected to predict low, medium, and high sleep-quality categories. The notebook reports a held-out test accuracy of 0.963 and macro F1 of 0.877 for this model.
+- Classification: The tuned Random Forest Classifier was selected to predict low, medium, and high sleep-quality categories. The notebook reports a held-out test accuracy of 0.963 and macro F1 of 0.948.
 - Feature analysis highlights stress level and sleep duration as important variables associated with sleep-quality scores.
 - Engineered interactions are also evaluated to determine whether they improve model performance.
 
@@ -114,24 +113,50 @@ These are the results reported by the current notebook; rerunning the notebook m
 
 ---
 
-## Repository Structure
+## Repository structure
 
-The notebook expects the following project paths relative to its working directory. Create the folders as needed; the notebook creates the processed-data, figures, and results output folders.
+The repository currently contains the following structure:
 
 ```text
 project-root/
-├── notebooks/
-│   └── QUALIFY_final (1).ipynb
+├── QUALIFY.ipynb
+├── README.md
+├── requirements.txt
 ├── data/
 │   ├── raw/
-│   │   └── Sleep_health_and_lifestyle_dataset.csv
+│   │   ├── Sleep_health_and_lifestyle_dataset.csv
+│   │   └── sleep-health-lifestyle.csv
 │   └── processed/
+│       ├── X_test_processed.csv
+│       ├── X_train_processed.csv
+│       ├── train.csv
+│       ├── test.csv
+│       ├── y_clf_test.csv
+│       ├── y_clf_train.csv
+│       ├── y_reg_test.csv
+│       ├── y_reg_train.csv
+│       └── ...
+├── notebooks/
+│   ├── QUALIFY_final.ipynb
+│   └── .gitkeep
+├── initial_work/
+│   ├── 01_preprocessing_hams.ipynb
+│   └── 02_EDA_randomforest_layan.ipynb
 ├── figures/
+│   └── ...
 ├── results/
-├── README.md
-
+│   └── ...
+├── src/
+│   └── __init__.py
+└── .gitignore
 ```
-If you keep the notebook in the repository root instead of notebooks/, adjust the paths in the notebook or run it from a directory where ../data/raw resolves correctly. The current notebook defines its paths as ../data/raw, ../data/processed, ../figures, and ../results.
+
+Notes:
+- The repo contains more than one notebook location. `QUALIFY.ipynb` at the repository root and `notebooks/QUALIFY_final.ipynb` are both present.
+- `initial_work/` contains earlier exploratory notebooks and is not the final deliverable location.
+- The final notebook should be treated as the one in `notebooks/QUALIFY_final.ipynb`, unless the team intentionally uses the root notebook as the working copy.
+
+If you run a notebook from the repository root, keep its working directory aligned with the repo root so that relative paths such as `data/raw/...` resolve correctly.
 
 ## Requirements
 
@@ -146,7 +171,9 @@ Use Python 3.10 or a compatible Python version with the following packages:
 - jupyter (to run the notebook locally)
   
 Install the packages by entering the following terminal command:
+```bash
 pip install numpy pandas matplotlib seaborn scikit-learn joblib jupyter
+```
 
 ## How to run
 1. Clone or download this repository.
@@ -155,7 +182,7 @@ pip install numpy pandas matplotlib seaborn scikit-learn joblib jupyter
 4. Open the notebook in Jupyter Notebook, JupyterLab, or Google Colab.
 5. Make sure the notebook's working directory and relative paths match the repository structure.
 6. Run the notebook cells from top to bottom. The notebook performs cleaning, analysis, training, evaluation, and saves result files under the configured output folders.
-   
+    
 If you use Google Colab, upload the notebook and dataset or mount the storage location containing them, then update the paths if necessary.
 
 ## Responsible use, ethics, and sustainability
@@ -168,7 +195,7 @@ Responsible use considerations include:
 - Fairness: assess whether performance differs across relevant groups, where the dataset supports such analysis.
 - Transparency: document data cleaning, feature construction, model selection, and evaluation.
 - Limitations: dataset quality, sample size, self-reported or subjective measures, and patterns in the source data may affect generalizability. Correlation does not establish causation.
-- Sustainability and social impact: better understanding of sleep and lifestyle patterns may support well-being, which relates to UN Sustainable Development Goal 3: Good Health and Well-Being. This project is exploratory and does not establish that using the models directly improves health outcomes.
+- Sustainability and social impact: better understanding of sleep and lifestyle patterns may support well-being, which relates to UN Sustainable Development Goal 3: Good Health and Well-Being. This is aligned with responsible AI practice.
   
 ## Limitations and future work
 
@@ -181,12 +208,11 @@ Potential next steps include:
 - Improve documentation of dataset provenance, licensing, and reproducibility.
   
 ## Course context
-This project was developed for CS316: Introduction to AI and Data Science in Term 261. The course project emphasizes applying AI and data science techniques to a meaningful problem while considering sustainability, ethical issues, and societal impact.
+This project was developed for CS316: Introduction to AI and Data Science in Term 261. The course project emphasizes applying AI and data science techniques to a meaningful problem while considering ethical and practical limitations.
 
 ## AI-use statement
 Complete this section to accurately reflect your team's process before submission:
 AI tools used: [Name the tools, if any.]
 How they were used: [Describe whether AI assisted with brainstorming, explanations, code, debugging, writing, or editing.]
 Human verification: [Explain how the team reviewed, tested, and verified any AI-assisted material.]
-
 
