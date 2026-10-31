@@ -145,7 +145,7 @@ Use Python 3.10 or a compatible Python version with the following packages:
 - joblib
 - jupyter (to run the notebook locally)
   
-Install the packages with:
+Install the packages by entering the following terminal command:
 pip install numpy pandas matplotlib seaborn scikit-learn joblib jupyter
 
 ## How to run
