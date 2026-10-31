@@ -68,39 +68,57 @@ The notebook also experiments with four engineered features:
 - Stress–heart-rate interaction
 - Steps per activity level
 - Absolute deviation of sleep duration from 8 hours
-
 ## Methods
-Data analysis and preprocessing
+
+### Data Analysis and Preprocessing
 The notebook includes:
+
 - Dataset inspection and summary statistics
 - Class-distribution plots, feature distributions, and correlation analysis
 - A stratified 80/20 train-test split using random state 42
-- Numerical missing-value imputation using the median and feature scaling with StandardScaler
+- Numerical missing-value imputation using the median and feature scaling with `StandardScaler`
 - Categorical missing-value imputation using the most frequent value and one-hot encoding
-- Feature engineering and comparison of original versus engineered features
+- Feature engineering and comparison between original and engineered features
+
 Preprocessing is organized into scikit-learn pipelines so transformations can be fitted on training data and applied consistently to held-out data.
-Models
+
+### Models
 The notebook compares baseline and machine-learning models for both tasks.
 
-Regression
-- Mean baseline (DummyRegressor)
+#### Regression
+- Mean baseline (`DummyRegressor`)
 - Linear Regression
 - Ridge Regression with hyperparameter tuning
 - Random Forest Regressor with hyperparameter tuning
-Classification
-- Majority-class baseline (DummyClassifier)
+
+#### Classification
+- Majority-class baseline (`DummyClassifier`)
 - Logistic Regression
 - Tuned Logistic Regression
 - Random Forest Classifier with hyperparameter tuning
-Cross-validation is used during model comparison and tuning. The notebook evaluates regression with metrics such as R², MAE, and RMSE, and classification with accuracy, macro F1, and a confusion matrix. Random Forest models are also examined for possible overfitting and feature importance.
-Main findings
+
+Cross-validation is used during model comparison and tuning. The notebook evaluates regression using metrics such as R², MAE, and RMSE, and classification using accuracy, macro F1, and a confusion matrix. Random Forest models are also examined for possible overfitting and feature importance.
+
+---
+
+## Main Findings
+
 According to the final model-selection discussion in the notebook:
+
 - Regression: Linear Regression was selected to predict the numerical sleep-quality score. The notebook reports a held-out test R² of 0.951 and RMSE of 0.293 for this model.
 - Classification: The tuned Random Forest Classifier was selected to predict low, medium, and high sleep-quality categories. The notebook reports a held-out test accuracy of 0.963 and macro F1 of 0.877 for this model.
-- Feature analysis highlights stress level and sleep duration as important variables associated with sleep-quality scores. Engineered interactions are also evaluated to determine whether they improve model performance.
+- Feature analysis highlights stress level and sleep duration as important variables associated with sleep-quality scores.
+- Engineered interactions are also evaluated to determine whether they improve model performance.
+
 These are the results reported by the current notebook; rerunning the notebook may produce different results if the dataset, environment, or code changes.
-Repository structure
+
+---
+
+## Repository Structure
+
 The notebook expects the following project paths relative to its working directory. Create the folders as needed; the notebook creates the processed-data, figures, and results output folders.
+
+```text
 project-root/
 ├── notebooks/
 │   └── QUALIFY_final (1).ipynb
@@ -110,10 +128,15 @@ project-root/
 │   └── processed/
 ├── figures/
 ├── results/
-└── README.md
+├── README.md
+
+```
 If you keep the notebook in the repository root instead of notebooks/, adjust the paths in the notebook or run it from a directory where ../data/raw resolves correctly. The current notebook defines its paths as ../data/raw, ../data/processed, ../figures, and ../results.
-Requirements
+
+## Requirements
+
 Use Python 3.10 or a compatible Python version with the following packages:
+
 - numpy
 - pandas
 - matplotlib
@@ -121,36 +144,46 @@ Use Python 3.10 or a compatible Python version with the following packages:
 - scikit-learn
 - joblib
 - jupyter (to run the notebook locally)
+  
 Install the packages with:
 pip install numpy pandas matplotlib seaborn scikit-learn joblib jupyter
-How to run
+
+## How to run
 1. Clone or download this repository.
 2. Put Sleep_health_and_lifestyle_dataset.csv in data/raw/.
 3. Install the required Python packages.
 4. Open the notebook in Jupyter Notebook, JupyterLab, or Google Colab.
 5. Make sure the notebook's working directory and relative paths match the repository structure.
 6. Run the notebook cells from top to bottom. The notebook performs cleaning, analysis, training, evaluation, and saves result files under the configured output folders.
+   
 If you use Google Colab, upload the notebook and dataset or mount the storage location containing them, then update the paths if necessary.
-Responsible use, ethics, and sustainability
+
+## Responsible use, ethics, and sustainability
+
 Sleep-quality predictions can help explore patterns in sleep and lifestyle data, but they should not be treated as a medical diagnosis or a substitute for advice from a qualified healthcare professional.
 
 Responsible use considerations include:
+
 - Privacy: avoid publishing identifiable or sensitive individual-level data.
 - Fairness: assess whether performance differs across relevant groups, where the dataset supports such analysis.
 - Transparency: document data cleaning, feature construction, model selection, and evaluation.
 - Limitations: dataset quality, sample size, self-reported or subjective measures, and patterns in the source data may affect generalizability. Correlation does not establish causation.
 - Sustainability and social impact: better understanding of sleep and lifestyle patterns may support well-being, which relates to UN Sustainable Development Goal 3: Good Health and Well-Being. This project is exploratory and does not establish that using the models directly improves health outcomes.
-Limitations and future work
+  
+## Limitations and future work
+
 Potential next steps include:
+
 - Evaluate the selected models on an independent external dataset.
 - Report class-wise precision, recall, and F1, and investigate errors across groups.
 - Assess calibration and robustness to missing or out-of-range inputs.
 - Compare additional algorithms and explainability methods.
 - Improve documentation of dataset provenance, licensing, and reproducibility.
-Course context
+  
+## Course context
 This project was developed for CS316: Introduction to AI and Data Science in Term 261. The course project emphasizes applying AI and data science techniques to a meaningful problem while considering sustainability, ethical issues, and societal impact.
 
-AI-use statement
+## AI-use statement
 Complete this section to accurately reflect your team's process before submission:
 AI tools used: [Name the tools, if any.]
 How they were used: [Describe whether AI assisted with brainstorming, explanations, code, debugging, writing, or editing.]
