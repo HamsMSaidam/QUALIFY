@@ -48,7 +48,7 @@ The notebook standardizes column names and categorical text, normalizes BMI cate
 
 The main target is quality_of_sleep. The classification target, sleep_quality_class, is derived from that score using these categories:
 
-# Class	 Rule
+## Class	 Rule
 Low	     Score below 6
 Medium	 Score from 6 up to (but not including) 8
 High	 Score of 8 or above
