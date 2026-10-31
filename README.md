@@ -153,8 +153,8 @@ project-root/
 
 Notes:
 - The repo contains more than one notebook location. `QUALIFY.ipynb` at the repository root and `notebooks/QUALIFY_final.ipynb` are both present.
-- `initial_work/` contains earlier exploratory notebooks and is not the final deliverable location.
-- The final notebook should be treated as the one in `notebooks/QUALIFY_final.ipynb`, unless the team intentionally uses the root notebook as the working copy.
+- `initial_work/` contains earlier exploratory notebooks and is maintained for reference in order to trace our project's development history. 
+- The final notebook is `notebooks/QUALIFY_final.ipynb`, unless the team intentionally uses the root notebook as the working copy.
 
 If you run a notebook from the repository root, keep its working directory aligned with the repo root so that relative paths such as `data/raw/...` resolve correctly.
 
@@ -183,7 +183,7 @@ pip install numpy pandas matplotlib seaborn scikit-learn joblib jupyter
 5. Make sure the notebook's working directory and relative paths match the repository structure.
 6. Run the notebook cells from top to bottom. The notebook performs cleaning, analysis, training, evaluation, and saves result files under the configured output folders.
     
-If you use Google Colab, upload the notebook and dataset or mount the storage location containing them, then update the paths if necessary.
+If you intend to use Google Colab, upload the notebook and dataset or mount the storage location containing them, then update the paths if necessary.
 
 ## Responsible use, ethics, and sustainability
 
@@ -210,9 +210,4 @@ Potential next steps include:
 ## Course context
 This project was developed for CS316: Introduction to AI and Data Science in Term 261. The course project emphasizes applying AI and data science techniques to a meaningful problem while considering ethical and practical limitations.
 
-## AI-use statement
-Complete this section to accurately reflect your team's process before submission:
-AI tools used: [Name the tools, if any.]
-How they were used: [Describe whether AI assisted with brainstorming, explanations, code, debugging, writing, or editing.]
-Human verification: [Explain how the team reviewed, tested, and verified any AI-assisted material.]
 
