@@ -1,5 +1,5 @@
 # QUALIFY
-Qualify: Sleep Quality Prediction
+### Qualify: Sleep Quality Prediction
 Course: CS316 – Introduction to AI and Data Science
 Instructor: Dr. Heyfa Ammar
 Term: 261
@@ -7,8 +7,8 @@ Project topic: Predicting sleep quality using machine learning
 Overview
 Qualify is a machine-learning project that explores how lifestyle and health-related factors are associated with sleep quality. It develops models for two related tasks:
 1. Regression: predict a numerical quality_of_sleep score.
-2. Classification: categorize sleep quality as low, medium, or high.
-3. 
+2. Classification: Based on scale of numerical sleep score, categorize sleep quality as low, medium, or high.
+
 The project applies data cleaning, exploratory data analysis (EDA), preprocessing pipelines, feature engineering, model training, cross-validation, hyperparameter tuning, and held-out test evaluation. It also considers the responsible use and limitations of predictions about personal well-being.
 Project objectives
 - Clean and prepare sleep-health data for analysis.
@@ -123,6 +123,7 @@ Potential next steps include:
 - Improve documentation of dataset provenance, licensing, and reproducibility.
 Course context
 This project was developed for CS316: Introduction to AI and Data Science in Term 261. The course project emphasizes applying AI and data science techniques to a meaningful problem while considering sustainability, ethical issues, and societal impact.
+
 AI-use statement
 Complete this section to accurately reflect your team's process before submission:
 AI tools used: [Name the tools, if any.]
