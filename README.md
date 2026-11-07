@@ -201,11 +201,11 @@ Responsible use considerations include:
 
 Potential next steps include:
 
-- Evaluate the selected models on an independent external dataset.
-- Report class-wise precision, recall, and F1, and investigate errors across groups.
-- Assess calibration and robustness to missing or out-of-range inputs.
-- Compare additional algorithms and explainability methods.
-- Improve documentation of dataset provenance, licensing, and reproducibility.
+- Testing the selected models on a separate sleep dataset to see whether the results hold up.
+- Check precision, recall, and F1 for each sleep-quality class, and see whether the models make prominent mistakes for different groups.
+- See how predictions behave when values are missing or fall outside the ranges in the training data. It would also be useful to check whether the models’ confidence scores are reliable.
+- Test a few other models and use adopt explainable AI (XAI) approach to obtain a vivid picture of which features tend to influence the model's predictions.
+- Document the dataset’s source and licensing, along with the steps needed to reproduce the results.
   
 ## Course context
 This project was developed for CS316: Introduction to AI and Data Science in Term 261. The course project emphasizes applying AI and data science techniques to a meaningful problem while considering ethical and practical limitations.
