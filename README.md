@@ -41,7 +41,7 @@ data/
     └── Sleep_health_and_lifestyle_dataset.csv
 ```
 
-Place the dataset at that exact path before running the notebook. If the dataset is not included in this GitHub repository, obtain it from the source used by your team and make sure you have permission to use it.
+Place the dataset at that exact path before running the notebook. If the desired sleep quality dataset is not included in this GitHub repository, obtain it from the source used by your team, make sure you have permission to use it beforehand, place it in `/data/raw`, and update the relative path as needed.
 
 The notebook standardizes column names and categorical text, normalizes BMI category labels, removes the person identifier and duplicate rows, drops records without a target value, and filters records to the sleep-quality prediction task.
 
@@ -118,10 +118,10 @@ These are the results reported by the current notebook; rerunning the notebook m
 The repository currently contains the following structure:
 
 ```text
-project-root/
-├── QUALIFY.ipynb
+QUALIFY/
 ├── README.md
 ├── requirements.txt
+├── .gitignore
 ├── data/
 │   ├── raw/
 │   │   ├── Sleep_health_and_lifestyle_dataset.csv
@@ -129,34 +129,40 @@ project-root/
 │   └── processed/
 │       ├── X_test_processed.csv
 │       ├── X_train_processed.csv
-│       ├── train.csv
+│       ├── dataset1_clean.csv
+│       ├── dataset1_extended_clean.csv
+│       ├── merged_clean_v1.csv
+│       ├── preprocessing_log.json
+│       ├── preprocessor.joblib
 │       ├── test.csv
+│       ├── train.csv
 │       ├── y_clf_test.csv
 │       ├── y_clf_train.csv
 │       ├── y_reg_test.csv
 │       ├── y_reg_train.csv
-│       └── ...
+│       └── .gitkeep
 ├── notebooks/
 │   ├── QUALIFY_final.ipynb
 │   └── .gitkeep
 ├── initial_work/
 │   ├── 01_preprocessing_hams.ipynb
-│   └── 02_EDA_randomforest_layan.ipynb
+│   ├── 02_EDA_randomforest_layan.ipynb
+│   └── QUALIFY.ipynb
 ├── figures/
-│   └── ...
+│   ├── .gitkeep
+│   └── ... (generated figures)
 ├── results/
-│   └── ...
-├── src/
-│   └── __init__.py
-└── .gitignore
+│   └── ... (result files)
+└── src/
+    └── __init__.py
 ```
 
 Notes:
-- The repo contains more than one notebook location. `QUALIFY.ipynb` at the repository root and `notebooks/QUALIFY_final.ipynb` are both present.
 - `initial_work/` contains earlier exploratory notebooks and is maintained for reference in order to trace our project's development history. 
 - The final notebook is `notebooks/QUALIFY_final.ipynb`, unless the team intentionally uses the root notebook as the working copy.
 
 If you run a notebook from the repository root, keep its working directory aligned with the repo root so that relative paths such as `data/raw/...` resolve correctly.
+When running the code locally, be it in Jupyter, VS Code, or Google Colab's Development Environment, ensure you open the `QUALIFY/` project folder, then proceed to open its relative path `notebooks/QUALIFY_final.ipynb`. For Google Colab Development Environment, the notebook and required dataset should be imported. 
 
 ## Requirements
 
